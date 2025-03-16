@@ -1,0 +1,279 @@
+module TOP(clk, rs, rw, en, dat, rst, up, dwn, lef, rig, led, seg, buz);
+    input up, dwn, lef, rig, rst, clk;
+    output [7:0] dat;
+    output rs, rw, en;
+    output [3:0] led;
+    output [6:0] seg;
+	 output buz;
+    reg [1:0] dir;
+    reg [3:0] wall;
+    reg [7:0] pos;
+    reg [7:0] x;
+    reg [7:0] food;
+
+    reg clk_1hz;
+    reg e;
+    reg [7:0] dat;
+    reg rs;
+    reg [26:0] counter;
+    reg clk_100hz;
+    reg [4:0] current, next;
+    reg [7:0] rnd = 40;
+    reg [14:0] score = 0;
+    reg c;
+	 reg d;
+    reg clk2;
+
+	 reg [7:0] arr1[0:79] = '{default: 8'hff};
+    integer y;
+	  
+    integer n = 0;
+    integer m = 0;
+	 integer o = 0;
+	 reg game_over = 0;
+	 
+    parameter set0 = 8'h00;
+    parameter set1 = 8'h01;
+    parameter set2 = 8'h02;
+    parameter set3 = 8'h03;
+    parameter set4 = 8'h04;
+    parameter set5 = 8'h05;
+    parameter set6 = 8'h06;
+    parameter set7 = 8'h07;
+    parameter dat0 = 8'h08;
+    parameter dat1 = 8'h09;
+	 parameter dat2 = 8'h0A;
+	 parameter dat3 = 8'h0B;
+	 parameter over = 8'h0C;
+	 parameter check = 8'h0D;
+	 parameter set8 = 8'h0E;
+	 parameter set9 = 8'h0F;
+	 parameter set10 = 8'h10;
+	 parameter set11 = 8'h11;
+	 parameter set12 = 8'h12;
+	 parameter set13 = 8'h13;
+	 parameter set14 = 8'h14;
+	 parameter set15 = 8'h15;
+	 parameter set16 = 8'h16;
+	 parameter set17 = 8'h17;
+	 parameter set18 = 8'h18;
+	 
+    CLK_1HZ U1 (clk, clk_1hz);
+    DISPLAY_7SEG U2 (clk, score, seg, led);
+    CLK_100HZ U3 (clk, clk_100hz);
+	 song U4 (clk, buz);
+	 RNG U5 (c, rnd);
+
+
+    always @(posedge clk) begin
+        counter <= counter + 1;
+        if (counter == 26'd500000) begin
+            counter <= 0;
+            clkr <= ~clkr;
+        end else begin
+            clkr <= clkr;
+        end
+    end
+
+    reg [7:0] arr[0:79];
+    reg [7:0] add;
+    integer i;
+
+    initial begin
+        add = 8'h80;
+        for (i = 0; i < 80; i = i + 1) begin
+            arr[i] = add;
+            add = add + 1;
+
+            if (add == 8'h94) add = 8'hC0;
+            else if (add == 8'hD4) add = 8'h94;
+            else if (add == 8'hA8) add = 8'hD4;
+        end
+    end
+
+    always @(posedge c) begin
+        food <= arr[rnd];
+        score <= score + 1;
+    end
+
+    always @(posedge clk ) begin
+    if (rig == 0 && dir != 1) dir <= 0;
+    else if (lef == 0 && dir != 0) dir <= 1;
+    else if (up == 0 && dir != 3) dir <= 2;
+    else if (dwn == 0 && dir != 2) dir <= 3;
+
+        if (x > 0 && x < 18)
+            wall <= 0;
+        else if (x == 39 || x == 59)
+            wall <= 1;
+        else if (x > 60 && x < 79)
+            wall <= 2;
+        else if (x == 20 || x == 40)
+            wall <= 3;
+        else if (x == 0)
+            wall <= 4;
+        else if (x == 19)
+            wall <= 5;
+        else if (x == 60)
+            wall <= 6;
+        else if (x == 79)
+            wall <= 7;
+        else
+            wall <= 8;
+        if (pos == food) begin
+            c <= ~c;
+        end
+		  if (!game_over && score > 3) begin  
+        for (o = 1; o < 79; o = o + 1) begin
+            if (arr1[o] == pos && o < score)	game_over <= 1;
+				if (arr[o] == food && o < score ) c <= ~c;
+        end
+    end
+    end
+
+    always @(posedge clk_1hz) begin
+        case (wall)
+            0: begin
+                case (dir)
+                    2'd0: x <= x + 1;
+                    2'd1: x <= x - 1;
+                    2'd2: x <= x + 60;
+                    2'd3: x <= x + 20;
+                endcase
+            end
+            1: begin
+                case (dir)
+                    2'd0: x <= x - 19;
+                    2'd1: x <= x - 1;
+                    2'd2: x <= x - 20;
+                    2'd3: x <= x + 20;
+                endcase
+            end
+            2: begin
+                case (dir)
+                    2'd0: x <= x + 1;
+                    2'd1: x <= x - 1;
+                    2'd2: x <= x - 20;
+                    2'd3: x <= x - 60;
+                endcase
+            end
+            3: begin
+                case (dir)
+                    2'd0: x <= x + 1;
+                    2'd1: x <= x + 19;
+                    2'd2: x <= x - 20;
+                    2'd3: x <= x + 20;
+                endcase
+            end
+            4: begin
+                case (dir)
+                    2'd0: x <= x + 1;
+                    2'd1: x <= x + 19;
+                    2'd2: x <= x + 60;
+                    2'd3: x <= x + 20;
+                endcase
+            end
+            5: begin
+                case (dir)
+                    2'd0: x <= x - 19;
+                    2'd1: x <= x - 1;
+                    2'd2: x <= x + 60;
+                    2'd3: x <= x + 20;
+                endcase
+            end
+            6: begin
+                case (dir)
+                    2'd0: x <= x + 1;
+                    2'd1: x <= x + 19;
+                    2'd2: x <= x - 20;
+                    2'd3: x <= x - 60;
+                endcase
+            end
+            7: begin
+                case (dir)
+                    2'd0: x <= x - 19;
+                    2'd1: x <= x - 1;
+                    2'd2: x <= x - 20;
+                    2'd3: x <= x - 60;
+                endcase
+            end
+            8: begin
+                case (dir)
+                    2'd0: x <= x + 7'd1;
+                    2'd1: x <= x - 7'd1;
+                    2'd2: x <= x - 7'd20;
+                    2'd3: x <= x + 7'd20;
+                endcase
+            end
+        endcase
+        pos <= arr[x];
+		  arr1[0] <= pos;	
+            for (y = 79	; y >0; y = y - 1) begin
+                    arr1[y] <= arr1[y-1];
+                end
+	 end
+    
+ 
+    always @(posedge clkr) begin
+        current = next;
+        case (current)
+            set0: begin rs <= 0; dat <= 8'h38; next <= set1; end
+            set1: begin rs <= 0; dat <= 8'h0C; next <= set2; end
+            set2: begin rs <= 0; dat <= 8'h6; next <= set3; end
+            set3: begin rs <= 0; dat <= 8'h1; next <= set4; end
+            set4: begin rs <= 0; dat <= food; next <= dat0; end
+            dat0: begin rs <= 1; dat <= 8'h6f; next <= set5; end
+            set5: begin rs <= 0; dat <= pos; next <= dat1; end
+            dat1: begin rs <= 1; dat <= 8'h4f;
+											if (score != 0)next <= dat2;
+												else next <= set0;
+												end
+    set6: begin
+        if (n < score ) begin
+            n <= n + 1;
+				rs <= 0;		
+            dat <= arr1[n];
+            next <= set7;
+        end else begin
+            n <= 0;
+				m <= 0;
+            next <= check;
+        end
+    end
+    set7: begin
+        if (m < score ) begin  
+				m <= m + 1;
+				rs <= 1;	
+            dat <= 8'b11011011;
+				
+            next <= dat2;
+        end else begin
+            
+            next <= check;
+        end
+    end
+			dat2: begin rs <= 1; dat <= 8'h20;next <= set6; end
+			check: begin 
+						if (game_over) begin 
+						next <= over;
+						end
+						else next <= set0;
+					 end
+			over: begin rs <= 0; dat <= 8'h1; next <= set8;  end
+			set8: begin rs <= 0; dat <= arr[5]; next <= set9; end
+			set9: begin rs <= 1; dat <= "G";  next <=set10;  end
+			set10: begin rs <= 1; dat <= "a"; next <=set11;  end
+			set11: begin rs <= 1; dat <= "m"; next <=set12;  end
+			set12: begin rs <= 1; dat <= "e"; next <=set13; end
+			set13: begin rs <= 1; dat <= " "; next <=set14; end
+			set14: begin rs <= 1; dat <= "O"; next <=set15; end
+			set15: begin rs <= 1; dat <= "v"; next <=set16; end
+			set16: begin rs <= 1; dat <= "e"; next <=set17; end
+			set17: begin rs <= 1; dat <= "r"; next <=set18; end
+			set18: begin rs<=0; end
+        endcase
+    end
+
+    assign en = clkr | e;
+    assign rw = 0;
+endmodule

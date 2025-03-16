@@ -1,0 +1,49 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: F:\snake_game\snake_game_assignments.csv
+# Generated on: Sun Mar 16 20:14:55 2025
+
+Status,From,To,Assignment Name,Value,Enabled,Entity,Comment,Tag
+Ok,,clk,Location,PIN_23,Yes,,,
+Ok,,en,Location,PIN_143,Yes,,,
+Ok,,rs,Location,PIN_141,Yes,,,
+Ok,,rw,Location,PIN_138,Yes,,,
+Ok,,dat[7],Location,PIN_11,Yes,,,
+Ok,,dat[6],Location,PIN_7,Yes,,,
+Ok,,dat[5],Location,PIN_10,Yes,,,
+Ok,,dat[4],Location,PIN_2,Yes,,,
+Ok,,dat[3],Location,PIN_3,Yes,,,
+Ok,,dat[2],Location,PIN_144,Yes,,,
+Ok,,dat[0],Location,PIN_142,Yes,,,
+Ok,,dat[1],Location,PIN_1,Yes,,,
+Ok,,rst,Location,PIN_25,Yes,,,
+Ok,,lef,Location,PIN_89,Yes,,,
+Ok,,dwn,Location,PIN_91,Yes,,,
+Ok,,rig,Location,PIN_88,Yes,,,
+Ok,,up,Location,PIN_90,Yes,,,
+Ok,,led[0],Location,PIN_137,Yes,,,
+Ok,,led[1],Location,PIN_136,Yes,,,
+Ok,,seg[0],Location,PIN_128,Yes,,,
+Ok,,seg[1],Location,PIN_121,Yes,,,
+Ok,,seg[2],Location,PIN_125,Yes,,,
+Ok,,seg[3],Location,PIN_129,Yes,,,
+Ok,,seg[4],Location,PIN_132,Yes,,,
+Ok,,seg[5],Location,PIN_126,Yes,,,
+Ok,,seg[6],Location,PIN_124,Yes,,,
+Ok,,led[2],Location,PIN_135,Yes,,,
+Ok,,led[3],Location,PIN_133,Yes,,,
+Ok,,buz,Location,PIN_110,Yes,,,
+,<<new>>,<<new>>,<<new>>,,,,,

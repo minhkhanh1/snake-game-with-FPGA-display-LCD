@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -29.427
+TNS   : -122.132
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -9.458
+TNS   : -507.920
+
+Type  : Slow 1200mV 85C Model Setup 'CLK_100HZ:U3|clk_1hz'
+Slack : -7.029
+TNS   : -496.027
+
+Type  : Slow 1200mV 85C Model Setup 'CLK_1HZ:U1|clk_1hz'
+Slack : -4.190
+TNS   : -854.543
+
+Type  : Slow 1200mV 85C Model Setup 'clk_food'
+Slack : -2.113
+TNS   : -36.884
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -0.143
+TNS   : -0.143
+
+Type  : Slow 1200mV 85C Model Hold 'CLK_100HZ:U3|clk_1hz'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK_1HZ:U1|clk_1hz'
+Slack : 0.507
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_food'
+Slack : 0.509
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -220.329
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_1HZ:U1|clk_1hz'
+Slack : -1.487
+TNS   : -975.472
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_100HZ:U3|clk_1hz'
+Slack : -1.487
+TNS   : -144.239
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_food'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Slow 1200mV 0C Model Setup 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -26.883
+TNS   : -111.257
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -8.923
+TNS   : -457.371
+
+Type  : Slow 1200mV 0C Model Setup 'CLK_100HZ:U3|clk_1hz'
+Slack : -6.429
+TNS   : -446.434
+
+Type  : Slow 1200mV 0C Model Setup 'CLK_1HZ:U1|clk_1hz'
+Slack : -3.893
+TNS   : -772.259
+
+Type  : Slow 1200mV 0C Model Setup 'clk_food'
+Slack : -1.820
+TNS   : -31.091
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -0.115
+TNS   : -0.115
+
+Type  : Slow 1200mV 0C Model Hold 'CLK_100HZ:U3|clk_1hz'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : 0.418
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_food'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK_1HZ:U1|clk_1hz'
+Slack : 0.475
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -220.329
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_1HZ:U1|clk_1hz'
+Slack : -1.487
+TNS   : -975.472
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_100HZ:U3|clk_1hz'
+Slack : -1.487
+TNS   : -144.239
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_food'
+Slack : -1.487
+TNS   : -49.071
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Fast 1200mV 0C Model Setup 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -11.977
+TNS   : -47.134
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -3.622
+TNS   : -130.556
+
+Type  : Fast 1200mV 0C Model Setup 'CLK_100HZ:U3|clk_1hz'
+Slack : -2.496
+TNS   : -162.649
+
+Type  : Fast 1200mV 0C Model Setup 'CLK_1HZ:U1|clk_1hz'
+Slack : -1.355
+TNS   : -108.428
+
+Type  : Fast 1200mV 0C Model Setup 'clk_food'
+Slack : -0.324
+TNS   : -2.379
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -0.229
+TNS   : -0.569
+
+Type  : Fast 1200mV 0C Model Hold 'CLK_100HZ:U3|clk_1hz'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : 0.195
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK_1HZ:U1|clk_1hz'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_food'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -158.015
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_1HZ:U1|clk_1hz'
+Slack : -1.000
+TNS   : -656.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_100HZ:U3|clk_1hz'
+Slack : -1.000
+TNS   : -97.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_food'
+Slack : -1.000
+TNS   : -33.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'DISPLAY_7SEG:U2|clk_div[15]'
+Slack : -1.000
+TNS   : -14.000
+
+------------------------------------------------------------

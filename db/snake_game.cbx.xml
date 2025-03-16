@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="snake_game">
+		<CBX_INST_ENTRY INSTANCE_NAME="|TOP|DISPLAY_7SEG:U2|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_0jm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|TOP|DISPLAY_7SEG:U2|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_3bm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|TOP|RNG:U5|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_o9m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|TOP|sound:U4|altsyncram:WideOr4_rtl_0" CBX_FILE_NAME="altsyncram_3901.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
